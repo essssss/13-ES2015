@@ -1,0 +1,32 @@
+ES5 Global Constants
+
+>var PI = 3.14;
+>PI = 42; // stop me from doing this!
+
+
+ES2015 Global Constants
+
+const PI = 3.14;
+PI = 42; --this will not work
+
+Quiz
+
+What is the difference between var and let?
+
+'var' has the ability to be redeclared while 'let' can only be changed.
+Also, 'let' is BLOCK SCOPED which means it is only available inside its code block. 'var' is FUNCTION scoped. When using 'var' in a global scope it is added to the window object.
+
+
+What is the difference between var and const?
+
+'const' is unable to be changed OR redeclared. Is also BLOCK scoped.
+
+
+What is the difference between let and const?
+
+'let' is able to be redefined while 'const' is immutable.'const' can only really be changed if it is a reference type (eg: array or object).
+
+
+What is hoisting?
+
+Hoisting- when declaring a variable with 'var' the declaration statements are "hoisted" to the top of the code (but obviously not really). this means if you call a variable with 'var' BEFORE it is declared in the code it will return "undefined." Variables declared with 'let' and 'const' are not "hoisted" in the same way. If they are called before they are declared they will throw an error.
