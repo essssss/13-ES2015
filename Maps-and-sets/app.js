@@ -66,6 +66,74 @@ bandMap.set('twenty', 'Matchbox Twenty').set(182, 'Blink-182');
 //    console.log(key + '=>' + val);
 // });
 
-for (let [key, value] of bandMap) {
-   console.log(key, '=', value);
+// for (let [key, value] of bandMap) {
+//    console.log(key, '=', value);
+// }
+
+// *********************
+// ***     SETS      ***
+// *********************
+
+// Sets are like arrays, however each value is unique
+// (You cannot have, say, two 7s)
+// Any type of value
+// Common in other languages
+// Create using 'NEW' keyword
+
+// Faster than arrays.
+// 'nofilter', 'justsaying', 'winning', 'yolo';
+
+const bannedHashTags = new Set(['nofilter', 'justsaying', 'winning', 'yolo']);
+
+// When creating a set, it only takes ONE (1) iterable (array or string or what have you). A string counts as an iterable
+// eg: new Set('hello');
+// gives a set with 'h', 'e', 'l', 'o'
+// Note that there is only one 'l'
+
+// add item to a set with ".add"
+// you can chain ".add"s
+
+bannedHashTags.add('bestlife').add('selfie');
+
+// To check if a value is in the Set, use ".has"
+// returns a boolean
+
+// .delete deletes a value
+// .clear clears the set
+
+function filterHashTags(tags) {
+   const bannedHashTags = new Set([
+      'nofilter',
+      'justsaying',
+      'winning',
+      'yolo',
+   ]);
+   return tags.filter((tag) => bannedHashTags.has(tag));
 }
+
+const susansTags = ['happymonday', 'yolo', 'winning', 'sunset'];
+
+// Main reason to use a set is because it is MUCH more efficient than an array for something like checking for an element, or adding a new element.
+
+// Also very easy to eliminate any duplicates from an array.
+
+const ages = [45, 42, 21, 23, 24, 98, 2, 4, 4, 12, 3, 12, 45];
+const agesNoDupes = [...new Set(ages)];
+
+/* ******** When to use SETS ********
+ * to remove duplicate values
+ * Uniqueness is required
+ * Efficiently checking if an item is in a collection (much better than an array) */
+
+// tangent on 0 and -0.
+// -0 is different than 0 in JavaScript.
+// Most browsers make them equal in a set though. So you only get one
+
+// Also
+// NaN is never equal to NaN
+// But it's considered the same in terms of Sets
+
+/* ******** When to use MAPS ********
+ * Finding the size is easy. no more loops or Object.keys()
+ * Keys can be ANY data type!!
+ */
